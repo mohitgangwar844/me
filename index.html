@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Govind Narayan | Birthday Celebration</title>
+    
+    <!-- Google Fonts for Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration for custom colors and fonts -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        gold: {
+                            100: '#fef08a',
+                            300: '#fde047',
+                            500: '#eab308',
+                            600: '#ca8a04',
+                            700: '#a16207',
+                        },
+                        dark: '#0a0a0a'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- External CSS File Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="relative min-h-screen flex flex-col font-sans selection:bg-gold-500 selection:text-dark">
+
+    <!-- Ambient background glow -->
+    <div class="glow-effect"></div>
+
+    <!-- Main Content Wrapper -->
+    <main class="relative z-10 flex-grow flex flex-col items-center justify-center px-4 sm:px-6 w-full max-w-7xl mx-auto py-12 md:py-20 min-h-screen">
+        
+        <!-- SECTION 1: COUNTDOWN -->
+        <div id="countdown-section" class="flex flex-col items-center text-center w-full max-w-4xl opacity-100 transition-opacity duration-1000">
+            <p class="text-gold-500 uppercase tracking-[0.3em] text-xs md:text-sm mb-4 font-semibold">The Grand Day Approaches</p>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-4 leading-tight">
+                Countdown for <br>
+                <span class="gold-gradient-text block mt-2">Govind Narayan</span>
+            </h1>
+            <p class="text-gray-400 mt-4 mb-10 max-w-xl text-sm md:text-base font-light leading-relaxed px-4">
+                Get ready to celebrate another amazing year of life, joy, and unforgettable memories. The wait is almost over.
+            </p>
+
+            <!-- Timer Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full px-4 mb-12">
+                <!-- Days -->
+                <div class="glass-box rounded-2xl p-6 flex flex-col items-center justify-center">
+                    <span id="days" class="text-4xl md:text-6xl font-bold font-serif text-white mb-2 tracking-tighter">00</span>
+                    <span class="text-gold-500 uppercase tracking-widest text-[10px] md:text-xs font-semibold">Days</span>
+                </div>
+                <!-- Hours -->
+                <div class="glass-box rounded-2xl p-6 flex flex-col items-center justify-center">
+                    <span id="hours" class="text-4xl md:text-6xl font-bold font-serif text-white mb-2 tracking-tighter">00</span>
+                    <span class="text-gold-500 uppercase tracking-widest text-[10px] md:text-xs font-semibold">Hours</span>
+                </div>
+                <!-- Minutes -->
+                <div class="glass-box rounded-2xl p-6 flex flex-col items-center justify-center">
+                    <span id="minutes" class="text-4xl md:text-6xl font-bold font-serif text-white mb-2 tracking-tighter">00</span>
+                    <span class="text-gold-500 uppercase tracking-widest text-[10px] md:text-xs font-semibold">Minutes</span>
+                </div>
+                <!-- Seconds -->
+                <div class="glass-box rounded-2xl p-6 flex flex-col items-center justify-center">
+                    <span id="seconds" class="text-4xl md:text-6xl font-bold font-serif text-white mb-2 tracking-tighter">00</span>
+                    <span class="text-gold-500 uppercase tracking-widest text-[10px] md:text-xs font-semibold">Seconds</span>
+                </div>
+            </div>
+
+            <!-- Skip Button -->
+            <button id="skip-btn" onclick="triggerCelebration(true)" class="btn-celebrate px-8 py-4 rounded-full uppercase tracking-widest text-sm font-semibold cursor-pointer z-20 flex items-center gap-2 group">
+                Celebrate Now 
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- SECTION 2: CELEBRATION -->
+        <div id="celebration-section" class="hidden flex-col items-center justify-center text-center w-full max-w-4xl px-4 py-10 my-auto break-words z-20">
+            <p class="text-gold-500 uppercase tracking-[0.4em] text-sm md:text-base mb-6 font-semibold animate-bounce mt-4">Today is the day!</p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-8 leading-tight">
+                Happy Birthday <br>
+                <span class="gold-gradient-text neon-pulse block mt-4 break-words">Govind Narayan</span>
+            </h1>
+            
+            <div class="glass-box rounded-2xl p-6 sm:p-8 md:p-12 mt-4 max-w-2xl relative overflow-hidden group w-full mx-auto mb-16">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-gold-500/10 to-transparent -translate-x-full group-hover:translate-x-full duration-1000 transition-transform ease-in-out"></div>
+                
+                <div class="relative z-10">
+                    <svg class="w-8 h-8 md:w-10 md:h-10 mx-auto mb-4 md:mb-6 text-gold-500 opacity-50" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    
+                    <p class="text-gray-200 text-base md:text-2xl font-light leading-relaxed mb-6 md:mb-8 font-serif">
+                        Wishing you a phenomenal birthday filled with immense joy, incredible success, and unforgettable moments. May this new chapter of your life be the most glorious one yet.
+                    </p>
+                    
+                    <div class="flex items-center justify-center gap-2 md:gap-4 border-t border-gold-500/20 pt-4 md:pt-6 w-full flex-wrap">
+                        <div class="h-[1px] w-6 md:w-12 bg-gold-500/50"></div>
+                        <p class="text-gold-400 font-sans tracking-widest uppercase text-xs md:text-sm font-semibold whitespace-normal md:whitespace-nowrap">
+                            With Love, <span class="text-white">Mohit Gangwar</span>
+                        </p>
+                        <div class="h-[1px] w-6 md:w-12 bg-gold-500/50"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="fixed bottom-0 w-full text-center py-4 z-10 bg-dark/80 backdrop-blur-sm border-t border-white/5">
+        <p class="text-gray-500 text-xs md:text-sm font-light tracking-wide">
+            Designed for <span class="text-gold-400 font-medium">Govind</span> by <span class="text-white font-medium">Mohit Gangwar</span>
+        </p>
+    </footer>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- External JavaScript File Link -->
+    <script src="script.js"></script>
+</body>
+</html>
